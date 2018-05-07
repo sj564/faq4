@@ -20,13 +20,29 @@ Route::get('/user/{user_id}/profile/{profile_id}/edit', 'ProfileController@edit'
 Route::post('/user/{user_id}/profile/', 'ProfileController@store')->name('profile.store');
 Route::patch('/user/{user_id}/profile/{profile_id}', 'ProfileController@update')->name('profile.update');
 Route::delete('/user/{user_id}/profile/{profile_id}', 'ProfileController@destroy')->name('profile.destroy');
-
 Route::get('/questions/{question_id}/answers/create', 'AnswerController@create')->name('answers.create');
 Route::get('/questions/{question_id}/answers/{answer_id}', 'AnswerController@show')->name('answers.show');
 Route::get('/questions/{question_id}/answers/{answer_id}/edit', 'AnswerController@edit')->name('answers.edit');
 Route::post('/questions/{question_id}/answers/', 'AnswerController@store')->name('answers.store');
 Route::patch('/questions/{question_id}/answer/{answer_id}', 'AnswerController@update')->name('answers.update');
 Route::delete('/questions/{question_id}/answer/{answer_id}', 'AnswerController@destroy')->name('answers.destroy');
-Route::resources([
-    'questions' => 'QuestionController',
-]);
+Route::resources(['questions' => 'QuestionController',]);
+
+
+
+
+
+Route::get( 'App\Http\Middleware\Admin', 'HomeController@admin') -> name('/adminOnlyPage/');
+Route::post('App\Http\Middleware\Admin', 'HomeController@admin') -> name('/adminOnlyPage/');
+
+Route::get( 'App\Http\Middleware\Tutor', 'HomeController@tutor') -> name('/tutorOnlyPage/');
+Route::post('App\Http\Middleware\Tutor', 'HomeController@tutor') -> name('/tutorOnlyPage/');
+
+Route::get( 'App\Http\Middleware\Student', 'HomeController@student') -> name('/studentOnlyPage/');
+Route::post( 'App\Http\Middleware\Student', 'HomeController@student') -> name('/studentOnlyPage/');
+
+
+
+
+
+

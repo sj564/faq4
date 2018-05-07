@@ -4,10 +4,19 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
+
+
+                <div class=”panel-body”>
+                    You are logged in! as <strong>{{ strtoupper(Auth::user()->type) }}</strong>
+                    Admin Page: <a href="{{ url('/') }}/adminOnlyPage">{{ url('/') }}/adminOnlyPage</a>
+                    Super Admin Page: <a href="{{ url('/') }}/tutorOnlyPage">{{ url('/') }}/tutorOnlyPage</a>
+                    Member Page: <a href="{{ url('/') }}/studentOnlyPage">{{ url('/') }}/studentOnlyPage</a>
+                </div>
+
                 <div class="card">
                     <div class="card-header">Questions
                         <a class="btn btn-primary float-right" href="{{ route('questions.create') }}">
-                        Create a question
+                            Create a question
                         </a>
 
 
@@ -39,9 +48,9 @@
                                     </div>
                                 @empty
 
-                                        There are no questions to view, create a question.
+                                    There are no questions to view, create a question.
 
-                                    @endforelse
+                                @endforelse
                             </div>
 
                         </div>
