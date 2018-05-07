@@ -9,8 +9,8 @@
                 <div class=”panel-body”>
                     You are logged in! as <strong>{{ strtoupper(Auth::user()->type) }}</strong>
                     Admin Page: <a href="{{ url('/') }}/adminOnlyPage">{{ url('/') }}/adminOnlyPage</a>
-                    Super Admin Page: <a href="{{ url('/') }}/tutorOnlyPage">{{ url('/') }}/tutorOnlyPage</a>
-                    Member Page: <a href="{{ url('/') }}/studentOnlyPage">{{ url('/') }}/studentOnlyPage</a>
+                    Tutor Page: <a href="{{ url('/') }}/tutorOnlyPage">{{ url('/') }}/tutorOnlyPage</a>
+                    Student Page: <a href="{{ url('/') }}/studentOnlyPage">{{ url('/') }}/studentOnlyPage</a>
                 </div>
 
                 <div class="card">
