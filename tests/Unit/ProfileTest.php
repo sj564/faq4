@@ -23,17 +23,7 @@ class ProfileTest extends TestCase
         $this->assertTrue($profile->save());
     }
 
-    public function testDeleteProfile()
-    {
-        $profile = new Profile();
-        //$user->name = 'Mr. Walker Barton';
-        $profile->user_id = '80';
-        $profile->fname = 'Mike';
-        $profile->lname = 'Lafferty';
-        $profile->body = 'Newark Resident';
-        $profile->save();
-        $this->assertTrue($profile->delete());
-    }
+
 
     public function testInsertProfile()
     {
@@ -45,5 +35,17 @@ class ProfileTest extends TestCase
         $profile->body = 'Born in Beantown';
         $profile->save();
         $this->assertTrue($profile->save());
+    }
+
+    public function testDeleteProfile()
+    {
+        $profile = new Profile();
+        //$user->name = 'Mr. Walker Barton';
+        $profile->user_id = '80';
+        $profile->fname = 'Mike';
+        $profile->lname = 'Lafferty';
+        $profile->body = 'Newark Resident';
+        $profile->save();
+        $this->assertTrue($profile->delete());
     }
 }
