@@ -32,15 +32,18 @@ Route::resources(['questions' => 'QuestionController',]);
 
 
 
-Route::get( 'App\Http\Middleware\Admin', 'HomeController@admin') -> name('/adminOnlyPage/');
-Route::post('App\Http\Middleware\Admin', 'HomeController@admin') -> name('/adminOnlyPage/');
-
-Route::get( 'App\Http\Middleware\Tutor', 'HomeController@tutor') -> name('/tutorOnlyPage/');
-Route::post('App\Http\Middleware\Tutor', 'HomeController@tutor') -> name('/tutorOnlyPage/');
-
-Route::get( 'App\Http\Middleware\Student', 'HomeController@student') -> name('/studentOnlyPage/');
-Route::post( 'App\Http\Middleware\Student', 'HomeController@student') -> name('/studentOnlyPage/');
-
+Route::group(['middleware' => 'App\Http\Middleware\Admin'], function()
+{
+    Route::match(['get', 'post'], '/adminOnlyPage/', 'HomeController@admin');
+});
+Route::group(['middleware' => 'App\Http\Middleware\Tutor'], function()
+{
+    Route::match(['get', 'post'], '/tutorOnlyPage/', 'HomeController@tutor');
+});
+Route::group(['middleware' => 'App\Http\Middleware\Student'], function()
+{
+    Route::match(['get', 'post'], '/studentOnlyPage/', 'HomeController@student');
+});
 
 
 
