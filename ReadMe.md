@@ -1,5 +1,5 @@
 
-Epic 01: Provide access control to all three actors. 
+-Epic 01: Provide access control to all three actors. 
 
 User Story 01: As an admin I should be able to authenticate and view new users
 
@@ -9,7 +9,7 @@ User Story 03: As an admin I should be able to view,add,edit,delete user profile
 
 
 
-User Stories:
+-User Stories:
 
 1)As an admin I want to view the adminOnlyPage, so that I can perform admin functions
 
@@ -31,8 +31,16 @@ User Stories:
 
 10) As an admin I want to add, modify, delete users,user profiles, questions and answers.
 
-11)As a tutor I want to add,delete,edit,view questions and view answers, so that I can post questions to students and evaluate them.
+11)As a tutor I want to add,edit,view questions and view,edit and delete answers, so that I can post questions to students and evaluate and correct the answers.
 
-12)As a student I want to view questions and add answers. 
+12)As a student I want to view questions and add answers.
 
+
+-References: 
+
+1) https://semaphoreci.com/community/tutorials/testing-middleware-in-laravel-with-phpunit
+
+2) https://laravel.com/docs/5.6/authorization
+
+3) https://medium.com/justlaravel/how-to-use-middleware-for-content-restriction-based-on-user-role-in-laravel-2d0d8f8e94c6
  
